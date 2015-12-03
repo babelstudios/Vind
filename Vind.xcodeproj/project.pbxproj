@@ -1,0 +1,762 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B44F06AA1C10F77900234D3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06A91C10F77900234D3A /* AppDelegate.swift */; };
+		B44F06AC1C10F77900234D3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06AB1C10F77900234D3A /* ViewController.swift */; };
+		B44F06AF1C10F77900234D3A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B44F06AD1C10F77900234D3A /* Main.storyboard */; };
+		B44F06B11C10F77900234D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44F06B01C10F77900234D3A /* Assets.xcassets */; };
+		B44F06B41C10F77900234D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B44F06B21C10F77900234D3A /* LaunchScreen.storyboard */; };
+		B44F06BF1C10F77900234D3A /* VindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06BE1C10F77900234D3A /* VindTests.swift */; };
+		B44F06CA1C10F77900234D3A /* VindUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06C91C10F77900234D3A /* VindUITests.swift */; };
+		B44F06CF1C10F77900234D3A /* Vind WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B44F06CE1C10F77900234D3A /* Vind WatchKit App.app */; };
+		B44F06D51C10F77900234D3A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B44F06D31C10F77900234D3A /* Interface.storyboard */; };
+		B44F06D71C10F77900234D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44F06D61C10F77900234D3A /* Assets.xcassets */; };
+		B44F06DE1C10F77900234D3A /* Vind WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B44F06DD1C10F77900234D3A /* Vind WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B44F06E31C10F77900234D3A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06E21C10F77900234D3A /* InterfaceController.swift */; };
+		B44F06E51C10F77900234D3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06E41C10F77900234D3A /* ExtensionDelegate.swift */; };
+		B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06E61C10F77900234D3A /* ComplicationController.swift */; };
+		B44F06E91C10F77900234D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44F06E81C10F77900234D3A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B44F06BB1C10F77900234D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44F069E1C10F77800234D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B44F06A51C10F77900234D3A;
+			remoteInfo = Vind;
+		};
+		B44F06C61C10F77900234D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44F069E1C10F77800234D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B44F06A51C10F77900234D3A;
+			remoteInfo = Vind;
+		};
+		B44F06D01C10F77900234D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44F069E1C10F77800234D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B44F06CD1C10F77900234D3A;
+			remoteInfo = "Vind WatchKit App";
+		};
+		B44F06DF1C10F77900234D3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44F069E1C10F77800234D3A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B44F06DC1C10F77900234D3A;
+			remoteInfo = "Vind WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B44F06F01C10F77900234D3A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B44F06DE1C10F77900234D3A /* Vind WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06F41C10F77900234D3A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B44F06CF1C10F77900234D3A /* Vind WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B44F06A61C10F77900234D3A /* Vind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vind.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44F06A91C10F77900234D3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B44F06AB1C10F77900234D3A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B44F06AE1C10F77900234D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B44F06B01C10F77900234D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B44F06B31C10F77900234D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B44F06B51C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44F06BA1C10F77900234D3A /* VindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44F06BE1C10F77900234D3A /* VindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VindTests.swift; sourceTree = "<group>"; };
+		B44F06C01C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44F06C51C10F77900234D3A /* VindUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VindUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44F06C91C10F77900234D3A /* VindUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VindUITests.swift; sourceTree = "<group>"; };
+		B44F06CB1C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44F06CE1C10F77900234D3A /* Vind WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vind WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44F06D41C10F77900234D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B44F06D61C10F77900234D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B44F06D81C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44F06DD1C10F77900234D3A /* Vind WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Vind WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B44F06E21C10F77900234D3A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B44F06E41C10F77900234D3A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B44F06E61C10F77900234D3A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		B44F06E81C10F77900234D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B44F06EA1C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B44F06A31C10F77900234D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06B71C10F77900234D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06C21C10F77900234D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06DA1C10F77900234D3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B44F069D1C10F77800234D3A = {
+			isa = PBXGroup;
+			children = (
+				B44F06A81C10F77900234D3A /* Vind */,
+				B44F06BD1C10F77900234D3A /* VindTests */,
+				B44F06C81C10F77900234D3A /* VindUITests */,
+				B44F06D21C10F77900234D3A /* Vind WatchKit App */,
+				B44F06E11C10F77900234D3A /* Vind WatchKit Extension */,
+				B44F06A71C10F77900234D3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B44F06A71C10F77900234D3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06A61C10F77900234D3A /* Vind.app */,
+				B44F06BA1C10F77900234D3A /* VindTests.xctest */,
+				B44F06C51C10F77900234D3A /* VindUITests.xctest */,
+				B44F06CE1C10F77900234D3A /* Vind WatchKit App.app */,
+				B44F06DD1C10F77900234D3A /* Vind WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B44F06A81C10F77900234D3A /* Vind */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06A91C10F77900234D3A /* AppDelegate.swift */,
+				B44F06AB1C10F77900234D3A /* ViewController.swift */,
+				B44F06AD1C10F77900234D3A /* Main.storyboard */,
+				B44F06B01C10F77900234D3A /* Assets.xcassets */,
+				B44F06B21C10F77900234D3A /* LaunchScreen.storyboard */,
+				B44F06B51C10F77900234D3A /* Info.plist */,
+			);
+			path = Vind;
+			sourceTree = "<group>";
+		};
+		B44F06BD1C10F77900234D3A /* VindTests */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06BE1C10F77900234D3A /* VindTests.swift */,
+				B44F06C01C10F77900234D3A /* Info.plist */,
+			);
+			path = VindTests;
+			sourceTree = "<group>";
+		};
+		B44F06C81C10F77900234D3A /* VindUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06C91C10F77900234D3A /* VindUITests.swift */,
+				B44F06CB1C10F77900234D3A /* Info.plist */,
+			);
+			path = VindUITests;
+			sourceTree = "<group>";
+		};
+		B44F06D21C10F77900234D3A /* Vind WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06D31C10F77900234D3A /* Interface.storyboard */,
+				B44F06D61C10F77900234D3A /* Assets.xcassets */,
+				B44F06D81C10F77900234D3A /* Info.plist */,
+			);
+			path = "Vind WatchKit App";
+			sourceTree = "<group>";
+		};
+		B44F06E11C10F77900234D3A /* Vind WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06E21C10F77900234D3A /* InterfaceController.swift */,
+				B44F06E41C10F77900234D3A /* ExtensionDelegate.swift */,
+				B44F06E61C10F77900234D3A /* ComplicationController.swift */,
+				B44F06E81C10F77900234D3A /* Assets.xcassets */,
+				B44F06EA1C10F77900234D3A /* Info.plist */,
+			);
+			path = "Vind WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B44F06A51C10F77900234D3A /* Vind */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44F06F51C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind" */;
+			buildPhases = (
+				B44F06A21C10F77900234D3A /* Sources */,
+				B44F06A31C10F77900234D3A /* Frameworks */,
+				B44F06A41C10F77900234D3A /* Resources */,
+				B44F06F41C10F77900234D3A /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44F06D11C10F77900234D3A /* PBXTargetDependency */,
+			);
+			name = Vind;
+			productName = Vind;
+			productReference = B44F06A61C10F77900234D3A /* Vind.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B44F06B91C10F77900234D3A /* VindTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44F06F81C10F77900234D3A /* Build configuration list for PBXNativeTarget "VindTests" */;
+			buildPhases = (
+				B44F06B61C10F77900234D3A /* Sources */,
+				B44F06B71C10F77900234D3A /* Frameworks */,
+				B44F06B81C10F77900234D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44F06BC1C10F77900234D3A /* PBXTargetDependency */,
+			);
+			name = VindTests;
+			productName = VindTests;
+			productReference = B44F06BA1C10F77900234D3A /* VindTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B44F06C41C10F77900234D3A /* VindUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44F06FB1C10F77900234D3A /* Build configuration list for PBXNativeTarget "VindUITests" */;
+			buildPhases = (
+				B44F06C11C10F77900234D3A /* Sources */,
+				B44F06C21C10F77900234D3A /* Frameworks */,
+				B44F06C31C10F77900234D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44F06C71C10F77900234D3A /* PBXTargetDependency */,
+			);
+			name = VindUITests;
+			productName = VindUITests;
+			productReference = B44F06C51C10F77900234D3A /* VindUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B44F06CD1C10F77900234D3A /* Vind WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44F06F11C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind WatchKit App" */;
+			buildPhases = (
+				B44F06CC1C10F77900234D3A /* Resources */,
+				B44F06F01C10F77900234D3A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B44F06E01C10F77900234D3A /* PBXTargetDependency */,
+			);
+			name = "Vind WatchKit App";
+			productName = "Vind WatchKit App";
+			productReference = B44F06CE1C10F77900234D3A /* Vind WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B44F06DC1C10F77900234D3A /* Vind WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B44F06ED1C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind WatchKit Extension" */;
+			buildPhases = (
+				B44F06D91C10F77900234D3A /* Sources */,
+				B44F06DA1C10F77900234D3A /* Frameworks */,
+				B44F06DB1C10F77900234D3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Vind WatchKit Extension";
+			productName = "Vind WatchKit Extension";
+			productReference = B44F06DD1C10F77900234D3A /* Vind WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B44F069E1C10F77800234D3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Jens Utbult";
+				TargetAttributes = {
+					B44F06A51C10F77900234D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					B44F06B91C10F77900234D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B44F06A51C10F77900234D3A;
+					};
+					B44F06C41C10F77900234D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = B44F06A51C10F77900234D3A;
+					};
+					B44F06CD1C10F77900234D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					B44F06DC1C10F77900234D3A = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = B44F06A11C10F77800234D3A /* Build configuration list for PBXProject "Vind" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B44F069D1C10F77800234D3A;
+			productRefGroup = B44F06A71C10F77900234D3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B44F06A51C10F77900234D3A /* Vind */,
+				B44F06B91C10F77900234D3A /* VindTests */,
+				B44F06C41C10F77900234D3A /* VindUITests */,
+				B44F06CD1C10F77900234D3A /* Vind WatchKit App */,
+				B44F06DC1C10F77900234D3A /* Vind WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B44F06A41C10F77900234D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06B41C10F77900234D3A /* LaunchScreen.storyboard in Resources */,
+				B44F06B11C10F77900234D3A /* Assets.xcassets in Resources */,
+				B44F06AF1C10F77900234D3A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06B81C10F77900234D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06C31C10F77900234D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06CC1C10F77900234D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06D71C10F77900234D3A /* Assets.xcassets in Resources */,
+				B44F06D51C10F77900234D3A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06DB1C10F77900234D3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06E91C10F77900234D3A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B44F06A21C10F77900234D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06AC1C10F77900234D3A /* ViewController.swift in Sources */,
+				B44F06AA1C10F77900234D3A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06B61C10F77900234D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06BF1C10F77900234D3A /* VindTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06C11C10F77900234D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06CA1C10F77900234D3A /* VindUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B44F06D91C10F77900234D3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B44F06E51C10F77900234D3A /* ExtensionDelegate.swift in Sources */,
+				B44F06E31C10F77900234D3A /* InterfaceController.swift in Sources */,
+				B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B44F06BC1C10F77900234D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B44F06A51C10F77900234D3A /* Vind */;
+			targetProxy = B44F06BB1C10F77900234D3A /* PBXContainerItemProxy */;
+		};
+		B44F06C71C10F77900234D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B44F06A51C10F77900234D3A /* Vind */;
+			targetProxy = B44F06C61C10F77900234D3A /* PBXContainerItemProxy */;
+		};
+		B44F06D11C10F77900234D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B44F06CD1C10F77900234D3A /* Vind WatchKit App */;
+			targetProxy = B44F06D01C10F77900234D3A /* PBXContainerItemProxy */;
+		};
+		B44F06E01C10F77900234D3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B44F06DC1C10F77900234D3A /* Vind WatchKit Extension */;
+			targetProxy = B44F06DF1C10F77900234D3A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B44F06AD1C10F77900234D3A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B44F06AE1C10F77900234D3A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B44F06B21C10F77900234D3A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B44F06B31C10F77900234D3A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B44F06D31C10F77900234D3A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B44F06D41C10F77900234D3A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B44F06EB1C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B44F06EC1C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B44F06EE1C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Vind WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B44F06EF1C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				INFOPLIST_FILE = "Vind WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B44F06F21C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Vind_WatchKit_Extension;
+				INFOPLIST_FILE = "Vind WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B44F06F31C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Vind_WatchKit_Extension;
+				INFOPLIST_FILE = "Vind WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B44F06F61C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B44F06F71C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vind/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B44F06F91C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.VindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vind.app/Vind";
+			};
+			name = Debug;
+		};
+		B44F06FA1C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VindTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.VindTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vind.app/Vind";
+			};
+			name = Release;
+		};
+		B44F06FC1C10F77900234D3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.VindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vind;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B44F06FD1C10F77900234D3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VindUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.VindUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vind;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B44F06A11C10F77800234D3A /* Build configuration list for PBXProject "Vind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06EB1C10F77900234D3A /* Debug */,
+				B44F06EC1C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B44F06ED1C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06EE1C10F77900234D3A /* Debug */,
+				B44F06EF1C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B44F06F11C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06F21C10F77900234D3A /* Debug */,
+				B44F06F31C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B44F06F51C10F77900234D3A /* Build configuration list for PBXNativeTarget "Vind" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06F61C10F77900234D3A /* Debug */,
+				B44F06F71C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B44F06F81C10F77900234D3A /* Build configuration list for PBXNativeTarget "VindTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06F91C10F77900234D3A /* Debug */,
+				B44F06FA1C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B44F06FB1C10F77900234D3A /* Build configuration list for PBXNativeTarget "VindUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B44F06FC1C10F77900234D3A /* Debug */,
+				B44F06FD1C10F77900234D3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B44F069E1C10F77800234D3A /* Project object */;
+}
