@@ -22,6 +22,10 @@
 		B44F06E51C10F77900234D3A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06E41C10F77900234D3A /* ExtensionDelegate.swift */; };
 		B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06E61C10F77900234D3A /* ComplicationController.swift */; };
 		B44F06E91C10F77900234D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44F06E81C10F77900234D3A /* Assets.xcassets */; };
+		B44F06FF1C10F7EA00234D3A /* WindObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06FE1C10F7EA00234D3A /* WindObservation.swift */; };
+		B44F07001C10F7EA00234D3A /* WindObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06FE1C10F7EA00234D3A /* WindObservation.swift */; };
+		B44F07031C10F82100234D3A /* VivaObservationsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */; };
+		B44F07041C10F82100234D3A /* VivaObservationsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,8 @@
 		B44F06E61C10F77900234D3A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		B44F06E81C10F77900234D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44F06EA1C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B44F06FE1C10F7EA00234D3A /* WindObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindObservation.swift; path = Observations/WindObservation.swift; sourceTree = "<group>"; };
+		B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VivaObservationsConnection.swift; path = Observations/VivaObservationsConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 		B44F069D1C10F77800234D3A = {
 			isa = PBXGroup;
 			children = (
+				B44F07011C10F7F300234D3A /* Observations */,
 				B44F06A81C10F77900234D3A /* Vind */,
 				B44F06BD1C10F77900234D3A /* VindTests */,
 				B44F06C81C10F77900234D3A /* VindUITests */,
@@ -213,6 +220,15 @@
 				B44F06EA1C10F77900234D3A /* Info.plist */,
 			);
 			path = "Vind WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B44F07011C10F7F300234D3A /* Observations */ = {
+			isa = PBXGroup;
+			children = (
+				B44F06FE1C10F7EA00234D3A /* WindObservation.swift */,
+				B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */,
+			);
+			name = Observations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,8 +423,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44F07031C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
 				B44F06AC1C10F77900234D3A /* ViewController.swift in Sources */,
 				B44F06AA1C10F77900234D3A /* AppDelegate.swift in Sources */,
+				B44F06FF1C10F7EA00234D3A /* WindObservation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +452,9 @@
 			files = (
 				B44F06E51C10F77900234D3A /* ExtensionDelegate.swift in Sources */,
 				B44F06E31C10F77900234D3A /* InterfaceController.swift in Sources */,
+				B44F07001C10F7EA00234D3A /* WindObservation.swift in Sources */,
 				B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */,
+				B44F07041C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,13 +626,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Vind_WatchKit_Extension;
 				INFOPLIST_FILE = "Vind WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -622,9 +645,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = Vind_WatchKit_Extension;
 				INFOPLIST_FILE = "Vind WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.utbult.jens.Vind.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
