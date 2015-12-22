@@ -13,7 +13,6 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
     
-    
     let vivaConnection = VivaObservationsConnection()
     var currentWindObservation: WindObservation?
     var lastError: ErrorType?
@@ -85,7 +84,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         components.hour = components.hour + 1
         var date = calendar.dateFromComponents(components)!
         let secondsToDate = date.timeIntervalSinceNow
-        if secondsToDate < 60 * 20 {
+        if secondsToDate < 60 * 10 {
             components.hour = components.hour + 1
             date = calendar.dateFromComponents(components)!
         }
@@ -122,28 +121,29 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Placeholder Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
-        
-        let fakeObservation = WindObservation(location: "Foobar", speed: 9.0, gusts: 10.0, direction: 3.0, date: NSDate())
-        
-        handler(templateForObservation(fakeObservation, complication: complication))
+        handler(templateForObservation(nil, complication: complication))
     }
     
-    private func templateForObservation(observation: WindObservation, complication: CLKComplication) -> CLKComplicationTemplate? {
-        
-        let imageProvider = CLKImageProvider(onePieceImage: observation.arrowImage())
-        
+    private func templateForObservation(observation: WindObservation?, complication: CLKComplication) -> CLKComplicationTemplate? {
+
         let textProvider:CLKSimpleTextProvider
-        if self.lastError != nil || observation.speed < 0 {
-            textProvider = CLKSimpleTextProvider(text: "--")
-        } else {
+        let image:UIImage
+        
+        if let observation = observation {
             let formatter = NSNumberFormatter()
             formatter.numberStyle = .DecimalStyle
             formatter.maximumSignificantDigits = 2
             formatter.usesSignificantDigits = true
             formatter.roundingMode = .RoundHalfUp
-            let windSpeed = formatter.stringFromNumber(NSNumber(float: observation.speed))!
+            let windSpeed = formatter.stringFromNumber(NSNumber(double: observation.speed))!
             textProvider = CLKSimpleTextProvider(text: "\(windSpeed) m/s")
+            image = UIImage.imageArrowForDirection(observation.direction)
+        } else {
+            textProvider = CLKSimpleTextProvider(text: "-- m/s")
+            image = UIImage.imageArrowForDirection(0.5)
         }
+        
+        let imageProvider = CLKImageProvider(onePieceImage: image)
         
         //        let dateFormatter = NSDateFormatter()
         //        dateFormatter.dateFormat = "HH:mm"

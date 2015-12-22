@@ -11,12 +11,12 @@ import UIKit
 
 struct WindObservation: CustomStringConvertible {
     var location: String
-    var speed: Float
-    var gusts: Float
-    var direction: Float
+    var speed: Double
+    var gusts: Double
+    var direction: Double
     let date: NSDate
     
-    init(location: String, speed: Float, gusts: Float, direction: Float, date: NSDate) {
+    init(location: String, speed: Double, gusts: Double, direction: Double, date: NSDate) {
         self.location = location
         self.speed = speed
         self.gusts = gusts
@@ -34,35 +34,5 @@ struct WindObservation: CustomStringConvertible {
     
     var description : String {
         return "\(location) (\(date)): speed=\(speed)m/s gusts=\(gusts) direction=\(direction)°"
-    }
-}
-
-extension WindObservation {
-    func arrowImage() -> UIImage {
-        return arrowImageWithColor(UIColor.blackColor())
-    }
-    
-    func arrowImageWithColor(color: UIColor) -> UIImage {
-        let size = CGSizeMake(30, 30)
-        let arrowSize = CGSizeMake(15, 25)
-        
-        let path = UIBezierPath()
-        path.moveToPoint(CGPointMake(arrowSize.width / 2, arrowSize.height))
-        path.addLineToPoint(CGPointMake(arrowSize.width, 0))
-        path.addLineToPoint(CGPointMake(arrowSize.width / 2, arrowSize.height * 0.15))
-        path.addLineToPoint(CGPointMake(0, 0))
-        
-        path.lineJoinStyle = CGLineJoin.Miter
-        path.closePath()
-        
-        let transform = CGAffineTransformTranslate(CGAffineTransformRotate(CGAffineTransformMakeTranslation(size.width / 2, size.height / 2), CGFloat(direction)), -arrowSize.width / 2, -arrowSize.height / 2)
-        path.applyTransform(transform)
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, 2.0)
-        let fillColor = color
-        fillColor.setFill()
-        path.fill()
-        let image = UIGraphicsGetImageFromCurrentImageContext()
-        return image
     }
 }

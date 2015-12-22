@@ -10,8 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let connection = SMHIObservationConnection()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        connection.weatherObservation { result in
+            print(result)
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
