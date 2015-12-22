@@ -8,11 +8,6 @@
 
 import Foundation
 
-enum ResultType {
-    case Success(r: WindObservation)
-    case Error(e: ErrorType)
-}
-
 enum CreateWindErrorType: ErrorType {
     case SoapParseError
     case NoValueInDictError
@@ -26,9 +21,9 @@ class VivaObservationsConnection: NSObject, NSXMLParserDelegate {
     var currentAttributes = [String: String]()
     var currentWind: WindObservation?
     var currentLocation: String?
-    var completionHandler:((ResultType)->Void)!
+    var completionHandler:((Result<WindObservation>)->Void)!
     
-    func windObservationAtLocationId(locationId: Int, completion: (ResultType) -> Void) {
+    func windObservationAtLocationId(locationId: Int, completion: (Result<WindObservation>) -> Void) {
         completionHandler = completion
         
         if let url = NSURL(string: "https://services.viva.sjofartsverket.se:8080/output/vivaoutputservice.svc/vivastation/\(locationId)") {
@@ -43,7 +38,7 @@ class VivaObservationsConnection: NSObject, NSXMLParserDelegate {
             let task = urlSession.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
                 guard let data = data else {
                     print(error)
-                    self.completionHandler(ResultType.Error(e: error ?? CreateWindErrorType.ConnectionError))
+                    self.completionHandler(Result.Error(e: error ?? CreateWindErrorType.ConnectionError))
                     self.completionHandler = nil
                     return
                 }
@@ -78,7 +73,7 @@ class VivaObservationsConnection: NSObject, NSXMLParserDelegate {
                 let observation = WindObservation(location: name, speed: averageWind!, gusts: gustWind!, direction: heading!, date: date!)
                 
                 
-                completion(ResultType.Success(r: observation))
+                completion(Result.Success(observation))
 
                 //print("Samples: \(samples)")
                 

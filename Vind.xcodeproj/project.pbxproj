@@ -34,6 +34,8 @@
 		B4FC3D441C245B1E000B940A /* SMHIObservationConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */; };
 		B4FC3D551C298D69000B940A /* UIImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */; };
 		B4FC3D561C298D69000B940A /* UIImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */; };
+		B4FC3D581C2996C3000B940A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D571C2996C3000B940A /* Result.swift */; };
+		B4FC3D591C2996C3000B940A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D571C2996C3000B940A /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,7 @@
 		B44F07591C123DD500234D3A /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Utilities.swift"; path = "Utilities/String+Utilities.swift"; sourceTree = "<group>"; };
 		B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMHIObservationConnection.swift; path = Observations/SMHIObservationConnection.swift; sourceTree = "<group>"; };
 		B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Utilities.swift"; path = "Utilities/UIImage+Utilities.swift"; sourceTree = "<group>"; };
+		B4FC3D571C2996C3000B940A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +242,7 @@
 		B44F07011C10F7F300234D3A /* Observations */ = {
 			isa = PBXGroup;
 			children = (
+				B4FC3D571C2996C3000B940A /* Result.swift */,
 				B44F06FE1C10F7EA00234D3A /* WindObservation.swift */,
 				B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */,
 				B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */,
@@ -458,6 +462,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FC3D581C2996C3000B940A /* Result.swift in Sources */,
 				B44F07031C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
 				B4FC3D431C245B1E000B940A /* SMHIObservationConnection.swift in Sources */,
 				B4FC3D551C298D69000B940A /* UIImage+Utilities.swift in Sources */,
@@ -495,6 +500,7 @@
 				B44F07001C10F7EA00234D3A /* WindObservation.swift in Sources */,
 				B44F07551C10FC4100234D3A /* SwiftyJSON.swift in Sources */,
 				B4FC3D561C298D69000B940A /* UIImage+Utilities.swift in Sources */,
+				B4FC3D591C2996C3000B940A /* Result.swift in Sources */,
 				B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */,
 				B44F07041C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
 				B4FC3D441C245B1E000B940A /* SMHIObservationConnection.swift in Sources */,
