@@ -13,8 +13,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
     
-    let vivaConnection = VivaObservationsConnection()
-    var currentWindObservation: WindObservation?
+    let sjofartsverketConnection = SjofartsverketWeatherConnection()
+    var currentWeather: Weather?
     var lastError: ErrorType?
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
@@ -37,13 +37,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        guard let current = currentWindObservation else {
+        guard let current = currentWeather else {
             print("No current observation, lets update.")
-            vivaConnection.windObservationAtLocationId(2, completion:{ (result: ResultType) -> Void in
+            sjofartsverketConnection.weatherAtLocationId(2, completion:{ (result: Result) -> Void in
                 switch result {
                 case .Success(let wind):
                     print("Initial update with data \(wind)")
-                    self.currentWindObservation = wind
+                    self.currentWeather = wind
                     let server = CLKComplicationServer.sharedInstance()
                     for complication in server.activeComplications {
                         server.reloadTimelineForComplication(complication)
@@ -97,11 +97,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     func requestedUpdateDidBegin() {
         print("requestedUpdateDidBegin @ \(NSDate())");
         
-        vivaConnection.windObservationAtLocationId(2, completion:{ (result: ResultType) -> Void in
+        sjofartsverketConnection.weatherAtLocationId(2, completion:{ (result: Result) -> Void in
             switch result {
-            case .Success(let wind):
-                print("Succesfully updated with data \(wind)")
-                self.currentWindObservation = wind
+            case .Success(let weather):
+                print("Succesfully updated with data \(weather)")
+                self.currentWeather = weather
                 self.lastError = nil
                 let server = CLKComplicationServer.sharedInstance()
                 for complication in server.activeComplications {
@@ -118,13 +118,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         print("requestedUpdateBudgetExhausted @ \(NSDate())")
     }
     
-    // MARK: - Placeholder Templates
+    // MARK: - Templates
     
     func getPlaceholderTemplateForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTemplate?) -> Void) {
         handler(templateForObservation(nil, complication: complication))
     }
     
-    private func templateForObservation(observation: WindObservation?, complication: CLKComplication) -> CLKComplicationTemplate? {
+    private func templateForObservation(observation: Weather?, complication: CLKComplication) -> CLKComplicationTemplate? {
 
         let textProvider:CLKSimpleTextProvider
         let image:UIImage
@@ -135,9 +135,9 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             formatter.maximumSignificantDigits = 2
             formatter.usesSignificantDigits = true
             formatter.roundingMode = .RoundHalfUp
-            let windSpeed = formatter.stringFromNumber(NSNumber(double: observation.speed))!
+            let windSpeed = formatter.stringFromNumber(NSNumber(double: observation.windSpeed!))!
             textProvider = CLKSimpleTextProvider(text: "\(windSpeed) m/s")
-            image = UIImage.imageArrowForDirection(observation.direction)
+            image = UIImage.imageArrowForDirection(observation.windDirection!)
         } else {
             textProvider = CLKSimpleTextProvider(text: "-- m/s")
             image = UIImage.imageArrowForDirection(0.5)

@@ -24,14 +24,16 @@
 		B44F06E91C10F77900234D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B44F06E81C10F77900234D3A /* Assets.xcassets */; };
 		B44F06FF1C10F7EA00234D3A /* WindObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06FE1C10F7EA00234D3A /* WindObservation.swift */; };
 		B44F07001C10F7EA00234D3A /* WindObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F06FE1C10F7EA00234D3A /* WindObservation.swift */; };
-		B44F07031C10F82100234D3A /* VivaObservationsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */; };
-		B44F07041C10F82100234D3A /* VivaObservationsConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */; };
+		B44F07031C10F82100234D3A /* SjofartsverketWeatherConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* SjofartsverketWeatherConnection.swift */; };
+		B44F07041C10F82100234D3A /* SjofartsverketWeatherConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07021C10F82100234D3A /* SjofartsverketWeatherConnection.swift */; };
 		B44F07541C10FC4100234D3A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07531C10FC4100234D3A /* SwiftyJSON.swift */; };
 		B44F07551C10FC4100234D3A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07531C10FC4100234D3A /* SwiftyJSON.swift */; };
 		B44F075A1C123DD500234D3A /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07591C123DD500234D3A /* String+Utilities.swift */; };
 		B44F075B1C123DD500234D3A /* String+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44F07591C123DD500234D3A /* String+Utilities.swift */; };
-		B4FC3D431C245B1E000B940A /* SMHIObservationConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */; };
-		B4FC3D441C245B1E000B940A /* SMHIObservationConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */; };
+		B450C6171C3BC63D00BD7A8A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B450C6161C3BC63D00BD7A8A /* Weather.swift */; };
+		B450C6181C3BC63D00BD7A8A /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B450C6161C3BC63D00BD7A8A /* Weather.swift */; };
+		B4FC3D431C245B1E000B940A /* SMHIWeatherConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D421C245B1E000B940A /* SMHIWeatherConnection.swift */; };
+		B4FC3D441C245B1E000B940A /* SMHIWeatherConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D421C245B1E000B940A /* SMHIWeatherConnection.swift */; };
 		B4FC3D551C298D69000B940A /* UIImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */; };
 		B4FC3D561C298D69000B940A /* UIImage+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */; };
 		B4FC3D581C2996C3000B940A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FC3D571C2996C3000B940A /* Result.swift */; };
@@ -119,10 +121,11 @@
 		B44F06E81C10F77900234D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B44F06EA1C10F77900234D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B44F06FE1C10F7EA00234D3A /* WindObservation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindObservation.swift; path = Observations/WindObservation.swift; sourceTree = "<group>"; };
-		B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VivaObservationsConnection.swift; path = Observations/VivaObservationsConnection.swift; sourceTree = "<group>"; };
+		B44F07021C10F82100234D3A /* SjofartsverketWeatherConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SjofartsverketWeatherConnection.swift; path = Observations/SjofartsverketWeatherConnection.swift; sourceTree = "<group>"; };
 		B44F07531C10FC4100234D3A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Frameworks/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
 		B44F07591C123DD500234D3A /* String+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Utilities.swift"; path = "Utilities/String+Utilities.swift"; sourceTree = "<group>"; };
-		B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMHIObservationConnection.swift; path = Observations/SMHIObservationConnection.swift; sourceTree = "<group>"; };
+		B450C6161C3BC63D00BD7A8A /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Weather.swift; path = Observations/Weather.swift; sourceTree = "<group>"; };
+		B4FC3D421C245B1E000B940A /* SMHIWeatherConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SMHIWeatherConnection.swift; path = Observations/SMHIWeatherConnection.swift; sourceTree = "<group>"; };
 		B4FC3D541C298D69000B940A /* UIImage+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Utilities.swift"; path = "Utilities/UIImage+Utilities.swift"; sourceTree = "<group>"; };
 		B4FC3D571C2996C3000B940A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -244,8 +247,9 @@
 			children = (
 				B4FC3D571C2996C3000B940A /* Result.swift */,
 				B44F06FE1C10F7EA00234D3A /* WindObservation.swift */,
-				B44F07021C10F82100234D3A /* VivaObservationsConnection.swift */,
-				B4FC3D421C245B1E000B940A /* SMHIObservationConnection.swift */,
+				B44F07021C10F82100234D3A /* SjofartsverketWeatherConnection.swift */,
+				B4FC3D421C245B1E000B940A /* SMHIWeatherConnection.swift */,
+				B450C6161C3BC63D00BD7A8A /* Weather.swift */,
 			);
 			name = Observations;
 			sourceTree = "<group>";
@@ -387,7 +391,7 @@
 					};
 					B44F06DC1C10F77900234D3A = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = G94FN7ACW4;
+						DevelopmentTeam = 785R3RY395;
 					};
 				};
 			};
@@ -463,9 +467,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4FC3D581C2996C3000B940A /* Result.swift in Sources */,
-				B44F07031C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
-				B4FC3D431C245B1E000B940A /* SMHIObservationConnection.swift in Sources */,
+				B44F07031C10F82100234D3A /* SjofartsverketWeatherConnection.swift in Sources */,
+				B4FC3D431C245B1E000B940A /* SMHIWeatherConnection.swift in Sources */,
 				B4FC3D551C298D69000B940A /* UIImage+Utilities.swift in Sources */,
+				B450C6171C3BC63D00BD7A8A /* Weather.swift in Sources */,
 				B44F075A1C123DD500234D3A /* String+Utilities.swift in Sources */,
 				B44F06AC1C10F77900234D3A /* ViewController.swift in Sources */,
 				B44F06AA1C10F77900234D3A /* AppDelegate.swift in Sources */,
@@ -497,13 +502,14 @@
 				B44F06E51C10F77900234D3A /* ExtensionDelegate.swift in Sources */,
 				B44F06E31C10F77900234D3A /* InterfaceController.swift in Sources */,
 				B44F075B1C123DD500234D3A /* String+Utilities.swift in Sources */,
+				B450C6181C3BC63D00BD7A8A /* Weather.swift in Sources */,
 				B44F07001C10F7EA00234D3A /* WindObservation.swift in Sources */,
 				B44F07551C10FC4100234D3A /* SwiftyJSON.swift in Sources */,
 				B4FC3D561C298D69000B940A /* UIImage+Utilities.swift in Sources */,
 				B4FC3D591C2996C3000B940A /* Result.swift in Sources */,
 				B44F06E71C10F77900234D3A /* ComplicationController.swift in Sources */,
-				B44F07041C10F82100234D3A /* VivaObservationsConnection.swift in Sources */,
-				B4FC3D441C245B1E000B940A /* SMHIObservationConnection.swift in Sources */,
+				B44F07041C10F82100234D3A /* SjofartsverketWeatherConnection.swift in Sources */,
+				B4FC3D441C245B1E000B940A /* SMHIWeatherConnection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

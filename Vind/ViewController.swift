@@ -10,14 +10,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let connection = SMHIObservationConnection()
+    let connection = SMHIWeatherConnection()
+    //    var sjofartsverketConnection = SjofartsverketWeatherConnection()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        connection.weatherObservation { result in
+
+        connection.weatherAtLocationId(97200, services: [.Temperature], completion: { result in
             print(result)
-        }
+        })
+//        connection.weatherObservation { result in
+//            print(result)
+//        }
+        
+//        sjofartsverketConnection.weatherAtLocationId(2, completion:{ (result: Result) -> Void in
+//            switch result {
+//            case .Success(let wind):
+//                print(wind)
+//            case .Error(let e):
+//                print("Error: \(e)")
+//            }
+//        })
         
         // Do any additional setup after loading the view, typically from a nib.
     }

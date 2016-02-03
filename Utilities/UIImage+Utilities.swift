@@ -11,13 +11,13 @@ import UIKit
 
 extension UIImage {
     
-    class func imageArrowForDirection(direction: Double) -> UIImage {
-        return imageArrowForDirection(direction, color: UIColor.blackColor())
+    class func imageArrowForDirection(direction: Double, size: CGSize = CGSizeMake(30, 30), scale: CGFloat = 1.0) -> UIImage {
+        return imageArrowForDirection(direction, color: UIColor.blackColor(), size: size, scale: scale)
     }
     
-    class func imageArrowForDirection(direction: Double, color: UIColor) -> UIImage {
-        let size = CGSizeMake(30, 30)
-        let arrowSize = CGSizeMake(15, 25)
+    class func imageArrowForDirection(direction: Double, color: UIColor, size: CGSize = CGSizeMake(30, 30), scale: CGFloat = 1.0) -> UIImage {
+        // let size = CGSizeMake(30, 30)
+        let arrowSize = CGSizeMake(size.height / 2 * scale, size.height / 1.2 * scale)
         
         let path = UIBezierPath()
         path.moveToPoint(CGPointMake(arrowSize.width / 2, arrowSize.height))
