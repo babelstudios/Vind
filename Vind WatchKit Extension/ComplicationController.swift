@@ -12,21 +12,28 @@ import ClockKit
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
-    
     let sjofartsverketConnection = SjofartsverketWeatherConnection()
-    var currentWeather: Weather?
+    var weatherObservations = [Weather]()
     var lastError: ErrorType?
     
     func getSupportedTimeTravelDirectionsForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationTimeTravelDirections) -> Void) {
-        handler([.Forward, .Backward])
+        handler([.Backward])
     }
     
     func getTimelineStartDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        guard let oldestWeather = weatherObservations.first else {
+            handler(nil)
+            return
+        }
+        return handler(oldestWeather.date)
     }
     
     func getTimelineEndDateForComplication(complication: CLKComplication, withHandler handler: (NSDate?) -> Void) {
-        handler(nil)
+        guard let currentWeather = weatherObservations.last else {
+            handler(nil)
+            return
+        }
+        handler(currentWeather.date)
     }
     
     func getPrivacyBehaviorForComplication(complication: CLKComplication, withHandler handler: (CLKComplicationPrivacyBehavior) -> Void) {
@@ -37,37 +44,26 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getCurrentTimelineEntryForComplication(complication: CLKComplication, withHandler handler: ((CLKComplicationTimelineEntry?) -> Void)) {
         
-        guard let current = currentWeather else {
-            print("No current observation, lets update.")
-            sjofartsverketConnection.weatherAtLocationId(2, completion:{ (result: Result) -> Void in
-                switch result {
-                case .Success(let wind):
-                    print("Initial update with data \(wind)")
-                    self.currentWeather = wind
-                    let server = CLKComplicationServer.sharedInstance()
-                    for complication in server.activeComplications {
-                        server.reloadTimelineForComplication(complication)
-                    }
-                case .Error(let e):
-                    print("Initial update failed with error: \(e)")
-                }
-            })
-            handler(nil)
+        guard let current = weatherObservations.last else {
+            updateWeatherObservation()
             return
         }
         
-        guard let complication = templateForObservation(current, complication: complication) else {
-            handler(nil)
-            return
-        }
-        
+        guard let complication = templateForObservation(current, complication: complication) else { return }
         let entry = CLKComplicationTimelineEntry(date: current.date, complicationTemplate:complication)
         handler(entry)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, beforeDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
-        // Call the handler with the timeline entries prior to the given date
-        handler(nil)
+        
+        let entries:[CLKComplicationTimelineEntry] = weatherObservations.filter { weather in
+            return weather.date.compare(date) == .OrderedAscending
+            }.flatMap { weather in
+                guard let complication = templateForObservation(weather, complication: complication) else { return nil }
+                return CLKComplicationTimelineEntry(date: weather.date, complicationTemplate:complication)
+        }
+        
+        handler(entries)
     }
     
     func getTimelineEntriesForComplication(complication: CLKComplication, afterDate date: NSDate, limit: Int, withHandler handler: (([CLKComplicationTimelineEntry]?) -> Void)) {
@@ -78,33 +74,42 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     // MARK: - Update Scheduling
     
     func getNextRequestedUpdateDateWithHandler(handler: (NSDate?) -> Void) {
+
+        // Make sure all updates happen on an even quarter of an hour
         let now = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Era, .Year, .Month, .Day, .Hour], fromDate: now)
-        components.hour = components.hour + 1
-        var date = calendar.dateFromComponents(components)!
-        let secondsToDate = date.timeIntervalSinceNow
-        if secondsToDate < 60 * 10 {
-            components.hour = components.hour + 1
-            date = calendar.dateFromComponents(components)!
-        }
+        let components = calendar.components([.Era, .Year, .Month, .Day, .Hour, .Minute], fromDate: now)
+        components.minute += 15 - components.minute % 15
+        let date = calendar.dateFromComponents(components)!
+//        let secondsToDate = date.timeIntervalSinceNow
+//        if secondsToDate < 60 * 10 {
+//            components.hour = components.hour + 1
+//            date = calendar.dateFromComponents(components)!
+//        }
         
         print("Request update complication @ \(date). Curren time \(now)")
         print("========================================================")
         handler(date);
     }
     
-    func requestedUpdateDidBegin() {
-        print("requestedUpdateDidBegin @ \(NSDate())");
+    func updateWeatherObservation() {
         
         sjofartsverketConnection.weatherAtLocationId(2, completion:{ (result: Result) -> Void in
             switch result {
             case .Success(let weather):
-                print("Succesfully updated with data \(weather)")
-                self.currentWeather = weather
+                if let current = self.weatherObservations.last {
+                    if current.date.compare(weather.date) != .OrderedSame {
+                        if self.weatherObservations.count > 95 {
+                            self.weatherObservations.removeFirst()
+                        }
+                        self.weatherObservations.append(weather)
+                    }
+                } else {
+                    self.weatherObservations.append(weather)
+                }
                 self.lastError = nil
                 let server = CLKComplicationServer.sharedInstance()
-                for complication in server.activeComplications {
+                for complication in server.activeComplications! {
                     server.reloadTimelineForComplication(complication)
                 }
             case .Error(let e):
@@ -112,6 +117,11 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
                 print("Failed updating with error: \(e)")
             }
         })
+    }
+    
+    func requestedUpdateDidBegin() {
+        print("requestedUpdateDidBegin @ \(NSDate())");
+        updateWeatherObservation()
     }
     
     func requestedUpdateBudgetExhausted() {
